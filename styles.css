@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(24, 21, 33);
+    color: white;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container form{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.432);
+    padding: 10px;
+    margin: 10px;
+}
+.container form a{
+    color: white;
+    font-size: 17px;
+}
+.container form div{
+    width: auto;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.container form input, select:focus{
+    outline: none;
+}
+.upload-label{
+    width: 200px;
+    padding: 10px;
+    border: 0.5px solid rgb(28, 24, 38);
+    cursor: pointer;
+    text-align: center;
+}
+.container form input[type="file"]{
+    display: none;
+}
+.container form select{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+.container form input:required{
+    width: 90%;
+    padding: 10px;
+    border: none;
+}
+.container form input[type="submit"]{
+    width: 200px;
+    padding: 10px;
+    background-color: rgb(13, 6, 34);
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+.side-image{
+    width: 50%;
+    height: 100vh;
+    object-fit: cover;
+    animation: imgMovement 40s infinite linear alternate;
+}
+@keyframes imgMovement{
+    from{
+        object-position: left;
+    }
+    to{
+        object-position: right;
+    }
+}
+.see-pass{
+    cursor: pointer;
+}
+
+.response{
+    background-color: rgb(106, 91, 190);
+    color: white;
+    text-align: center;
+    width: 70%;
+    padding: 30px 20px;
+    transition: all 1s ease-out;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.response button{
+    width:150px;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(13, 6, 34);
+    color: white;
+}
+.self-response{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    z-index: 5;
+    background-color: rgb(106, 91, 190);
+    color: white;
+    text-align: center;
+    width: 50%;
+    padding: 30px 20px;
+    transition: all 1s ease-out;
+}
+.self-response a{
+    color: white;
+}
+.self-response.inactive{
+    transform: translateX(150%);
+}
+@media screen and (max-width:900px) {
+    .side-image{
+        display: none;
+    }
+    .container form{
+        width: 90%;
+    }
+    .container{
+        align-items: flex-start;
+    }
+}
